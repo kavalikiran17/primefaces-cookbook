@@ -1,5 +1,7 @@
 == Getting Started ==
 
+To start the embedded Jetty server with class reloading enabled, execute `script/run`.
+
 === Prerequisites ===
 
 * Install Git as described in the [http://git-scm.com/book/en/Getting-Started-Installing-Git Pro Git book].
