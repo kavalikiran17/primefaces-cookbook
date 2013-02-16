@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "$(dirname "$0")/.."
+
+if [ ! -e target/springloaded.jar ]; then
+  wget -O target/springloaded.jar https://github.com/downloads/SpringSource/spring-loaded/springloaded-1.1.1-dev.jar
+fi
+if [ ! -e target/spring-loaded-plugins-0.1.jar ]; then
+   wget -O target/spring-loaded-plugins-0.1.jar
+fi
+
+export MAVEN_OPTS="$MAVEN_OPTS -javaagent:target/springloaded.jar -noverify -classpath target/"
+mvn "$@" jetty:run

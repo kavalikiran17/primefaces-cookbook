@@ -270,7 +270,8 @@
                         <overrideDescriptor>src/main/resources/overrideweb-${jsf.impl}.xml</overrideDescriptor>
                     </webAppConfig>
                     <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
-                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <!-- We don't want Jetty to reload on class file changes, we'll leave this to Spring Loaded -->
+                    <reload>manual</reload>
                     <stopPort>9966</stopPort>
                     <stopKey>foo</stopKey>
                     <systemProperties>
@@ -281,6 +282,14 @@
                     </systemProperties>
                 </configuration>
                 <dependencies>
+                    <!-- SpringLoaded plugin for EL property reloading -->
+                    <dependency>
+                        <groupId>com.echophase</groupId>
+                        <artifactId>spring-loaded-plugins</artifactId>
+                        <version>0.1</version>
+                        <scope>system</scope>
+                        <systemPath>${project.basedir}/target/spring-loaded-plugins-0.1.jar</systemPath>
+                    </dependency>
                     <dependency>
                         <groupId>javax.el</groupId>
                         <artifactId>el-api</artifactId>
