@@ -288,7 +288,7 @@
                         <artifactId>spring-loaded-plugins</artifactId>
                         <version>0.1</version>
                         <scope>system</scope>
-                        <systemPath>${project.basedir}/target/spring-loaded-plugins-0.1.jar</systemPath>
+                        <systemPath>${project.basedir}/libs/spring-loaded-plugins-0.1.jar</systemPath>
                     </dependency>
                     <dependency>
                         <groupId>javax.el</groupId>
